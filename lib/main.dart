@@ -10,7 +10,12 @@ void main() {
   loadFirebase();
 }
 loadFirebase()async{
+  try{
+
   await Firebase.initializeApp();
+  }catch(e){
+    print("internet connection problem");
+  }
 }
 class MyApp extends StatelessWidget {
   @override
